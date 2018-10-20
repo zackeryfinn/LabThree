@@ -12,9 +12,7 @@ namespace LabNumberThree
    
          
         {
-            //start the yes no repeat loop here
-            while (true)
-            { 
+           
 
 
             //get your name
@@ -22,16 +20,22 @@ namespace LabNumberThree
             Console.Write("May I start with your name please?  ");
             var name = Console.ReadLine();
             Console.WriteLine();
-   
-            //get number & validate
-            Console.Write("Please enter a number between 1 and 100: ");
+
+            //start the yes no repeat loop here
+            while (true)
+            {
+
+                //get number & validate
+                Console.Write("Please enter a number between 1 and 100: ");
             string inputNumber = Console.ReadLine();
             var number = 0;
-            while (!int.TryParse(inputNumber, out number) || number < 0 || number > 100)
+            while (!int.TryParse(inputNumber, out number) || number < 1 || number > 100)
             {
-                Console.WriteLine("Sorry, that is not a valid input.");
+                    Console.WriteLine();
+                    Console.WriteLine("Sorry, that is not a valid input.");
                 Console.Write("Please enter a nubmer between 1 and 100: ");
                 inputNumber = Console.ReadLine();
+                    
             }
 
             //Let's be nice and repeat what was stated
@@ -78,16 +82,14 @@ namespace LabNumberThree
                     }
                 }
             }
-            Console.WriteLine();
 
-            //section to go again
+           
             //Section to go again
             Console.WriteLine();
 
-            Console.Write("Would you like to try again ? If no press \"n\" to exit. -");
+            Console.Write("Would you like to try again ? Press any key to continue or \"n\" to exit. -");
             if (Console.ReadLine().Equals("n", StringComparison.OrdinalIgnoreCase)) break;
-            Console.Clear();
-
+                Console.WriteLine();
 
 
             }
