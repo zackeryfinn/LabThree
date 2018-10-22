@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LabNumberThreeVersion2
 {
@@ -10,10 +6,10 @@ namespace LabNumberThreeVersion2
     {
         static void Main(string[] args)
         {
-           
-                
 
-                var name = GetYourName();
+
+            // I like that getting a name is in a seperate method! keeping your code seperated is a great thing.
+            var name = GetYourName();
             while (true)
             {
 
@@ -25,12 +21,12 @@ namespace LabNumberThreeVersion2
                 Console.WriteLine();
                 Console.WriteLine($"Thank you. Your number is: {number}.");
 
-               CrunchYourNumber(name,number);
-                
+                CrunchYourNumber(name, number);
+
                 Console.Write("Would you like to try again ? Press any key to continue or \"n\" to exit. -");
                 if (Console.ReadLine().Equals("n", StringComparison.OrdinalIgnoreCase)) break;
-               
 
+                // James - I would start practicing on  reducing your white space to make your code more readable. 
             }
 
             Console.WriteLine();
@@ -38,7 +34,8 @@ namespace LabNumberThreeVersion2
             Console.WriteLine("Thank you and have a great day!");
             Console.ReadKey();
 
-          
+            // James - please reduce the amount of lines and spaces, makes it hard to read when all of this
+            // whitespace is present. 
 
         }
 
@@ -53,6 +50,7 @@ namespace LabNumberThreeVersion2
             return name;
         }
 
+        // James - Great use of seperateion of concerns again, I like that your validation is totally seperate.
         public static int GetYourNumber()
         {       //get number & validate
             Console.Write("Please enter a number between 1 and 100: ");
@@ -67,8 +65,10 @@ namespace LabNumberThreeVersion2
             return number;
         }
 
-
-        public static void CrunchYourNumber(string name,int number)
+        // James - Again great use of  seperations, though as an extra challenge, I would try to reduce the amount 
+        // of nested if statements! if you can somehow make all the if statements in the same scope or just use a 
+        // switch case. 
+        public static void CrunchYourNumber(string name, int number)
         {
             //a series of if / else loops to get it all sorted
             //lets start with sorting odds from evens
@@ -111,14 +111,15 @@ namespace LabNumberThreeVersion2
             }
             Console.WriteLine();
 
-           
-
-        }
-            }
-         
-
-
-
 
 
         }
+    }
+
+
+
+    //  James - again, please try to reduce the amount of whitespace, it really does make it 
+    // more difficult for other developers to read 
+
+
+}
